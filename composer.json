@@ -1,17 +1,19 @@
 {
-    "name": "gs-nasc/BrazilHoliday",
-    "description": "A simple hello world composer package",
+    "name": "gs-nasc/brazil-holiday",
+    "description": "PHP Package thats verify if date is or not a holiday.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ogbonna Vitalis",
-            "email": "agavitalisogbonna@gmail.com"
+            "name": "Gabriel Nascimento",
+            "email": "gsnaxsi@gmail.com"
         }
     ],
     "minimum-stability": "stable",
+    "require": {},
     "autoload": {
-        "psr-4": {"vitalis\\HelloWorld\\": "src/"}
-    },
-    "require": {}
+        "psr-4": {
+            "BrazilHoliday\\": "src/"
+        }
+    }
 }
