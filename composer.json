@@ -1,0 +1,17 @@
+{
+    "name": "gs-nasc/BrazilHoliday",
+    "description": "A simple hello world composer package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ogbonna Vitalis",
+            "email": "agavitalisogbonna@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"vitalis\\HelloWorld\\": "src/"}
+    },
+    "require": {}
+}
