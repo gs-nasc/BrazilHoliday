@@ -125,15 +125,44 @@ echo $holiday->yesterdayHoliday() ? "É feriado" : "Não é feriado";
 ```
 
 ## Tabela de Feriados Disponíveis
-| Holiday                  	| Status 	|
-|--------------------------	|--------	|
-| Ano Novo                 	| ✔️    	|
-| Tiradentes               	| ✔️     	|
-| Dia do Trabalho          	| ✔️     	|
-| Independência do Brasil  	| ✔️      |
-| Nossa Senhora Aparecida  	| ✔️     	|
-| Finados                  	| ✔️     	|
-| Proclamação da República 	| ✔️     	|
-| Véspera de Natal         	| ✔️     	|
-| Natal                    	| ✔️     	|
-| Véspera de Ano Novo      	| ✔️     	|
+|                                        	| Status 	|
+|----------------------------------------	|--------	|
+| Ano Novo                               	| ✔️      	|
+| Dia Internacional da Mulher            	| ✔️      	|
+| Dia da Mentira                         	| ✔️      	|
+| Dia do Índio                           	| ✔️      	|
+| Tiradentes                             	| ✔️      	|
+| Descobrimento do Brasil                	| ✔️      	|
+| Dia do Trabalhador                     	| ✔️      	|
+| Dia da Abolição da Escravatura         	| ✔️      	|
+| Dia Mundial do Meio Ambiente           	| ✔️      	|
+| Dia dos Namorados                      	| ✔️      	|
+| Dia de São João                        	| ✔️      	|
+| Dia do Amigo                           	| ✔️      	|
+| Dia dos Avós                           	| ✔️      	|
+| Dia do Estudante                       	| ✔️      	|
+| Dia do Folclore                        	| ✔️      	|
+| Dia do Soldado                         	| ✔️      	|
+| Independência do Brasil                	| ✔️      	|
+| Dia da Árvore                          	| ✔️      	|
+| Dia Internacional da Paz               	| ✔️      	|
+| Dia das Crianças                       	| ✔️      	|
+| Nossa Senhora Aparecida                	| ✔️      	|
+| Dia do Professor                       	| ✔️      	|
+| Dia Nacional do Livro                  	| ✔️      	|
+| Halloween                              	| ✔️      	|
+| Finados                                	| ✔️      	|
+| Proclamação da República               	| ✔️      	|
+| Dia da Bandeira                        	| ✔️      	|
+| Dia Nacional da Consciência Negra      	| ✔️      	|
+| Dia Internacional dos Direitos Humanos 	| ✔️      	|
+| Véspera de Natal                       	| ✔️      	|
+| Natal                                  	| ✔️      	|
+| Véspera de Ano Novo                    	| ✔️      	|
+| Carnaval                               	| ✔️      	|
+| Páscoa                                 	| ✔️      	|
+| Sexta-Feira Santa                      	| ✔️      	|
+| Corpus Christ                          	| ✔️      	|
+| Dia da Mães                            	| ✔️      	|
+| Dia dos Pais                           	| ✔️      	|
+
