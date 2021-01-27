@@ -9,6 +9,7 @@ class Holiday
     public $title;
     public $date;
     public $holiday;
+    public $type;
 
     public function __construct($title = NULL, $date = NULL)
     {
@@ -18,18 +19,13 @@ class Holiday
 
     public function load($year = 2000)
     {
-        $this->holiday = null;
 
-        $this->holiday[] = new Holiday('Ano Novo', DateTime::createFromFormat('d/m/Y', '01/01/' . $year));
-        $this->holiday[] = new Holiday('Tiradentes', DateTime::createFromFormat('d/m/Y', '21/04/' . $year));
-        $this->holiday[] = new Holiday('Dia do trabalho', DateTime::createFromFormat('d/m/Y', '01/05/' . $year));
-        $this->holiday[] = new Holiday('Independência do Brasil', DateTime::createFromFormat('d/m/Y', '07/09/' . $year));
-        $this->holiday[] = new Holiday('Nossa Senhora Aparecida', DateTime::createFromFormat('d/m/Y', '12/10/' . $year));
-        $this->holiday[] = new Holiday('Finados', DateTime::createFromFormat('d/m/Y', '02/11/' . $year));
-        $this->holiday[] = new Holiday('Proclamação da República', DateTime::createFromFormat('d/m/Y', '15/11/' . $year));
-        $this->holiday[] = new Holiday('Véspera de Natal', DateTime::createFromFormat('d/m/Y', '24/12/' . $year));
-        $this->holiday[] = new Holiday('Natal', DateTime::createFromFormat('d/m/Y', '25/12/' . $year));
-        $this->holiday[] = new Holiday('Véspera de Ano Novo', DateTime::createFromFormat('d/m/Y', '31/12/' . $year));
+        $holidays = json_decode(file_get_contents(dirname(__FILE__) . "/dates.json"), true);
+
+        foreach ($holidays['fixed_holidays'] as $holiday) {
+            $this->holiday[] = new Holiday($holiday['name'], DateTime::createFromFormat('d/m/Y', $holiday['date'] . '/' . $year));
+        }
+
         // FERIADOS MÓVEIS
         $x = 0;
         $y = 0;
@@ -71,11 +67,19 @@ class Holiday
             $month = 3;
         }
 
+
         $pascoa = DateTime::createFromFormat('j/n/Y', "$day/$month/$year");
-        $sexta_santa = (clone $pascoa)->modify('-2 days');
-        $carnaval1  = (clone $pascoa)->modify('-48 days');
-        $carnaval2  = (clone $pascoa)->modify('-47 days');
-        $corpusChrist  = (clone $pascoa)->modify('+29 days');
+        $sexta_santa = clone $pascoa;
+        $carnaval1  = clone $pascoa;
+        $carnaval2  = clone $pascoa;
+        $corpusChrist  = clone $pascoa;
+
+
+        $sexta_santa->modify('-2 days');
+        $carnaval1->modify('-48 days');
+        $carnaval2->modify('-47 days');
+        $corpusChrist->modify('+29 days');
+
 
         $this->holiday[] = new Holiday('Páscoa', $pascoa);
         $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa);
@@ -104,7 +108,7 @@ class Holiday
         }
         return false;
     }
-    
+
     public function tomorrowHoliday()
     {
         $date = new DateTime("tomorrow");
