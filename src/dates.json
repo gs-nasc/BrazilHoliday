@@ -1,0 +1,54 @@
+{
+    "fixed_holidays": [
+        {
+            "name": "Ano Novo",
+            "date": "01/01",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Tiradentes",
+            "date": "21/04",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Dia do Trabalho",
+            "date": "01/05",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Independência do Brasil",
+            "date": "07/09",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Nossa Senhora Aparecida",
+            "date": "12/10",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Finados",
+            "date": "02/11",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Proclamação da República",
+            "date": "15/11",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Véspera de Natal",
+            "date": "24/12",
+            "type": "Dia Comum"
+        },
+        {
+            "name": "Natal",
+            "date": "25/12",
+            "type": "Feriado Nacional"
+        },
+        {
+            "name": "Véspera de Ano Novo",
+            "date": "31/12",
+            "type": "Dia Comum"
+        }
+    ]
+}
