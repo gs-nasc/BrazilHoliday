@@ -68,11 +68,15 @@ class Holiday
         }
 
 
+        $primeiro_domingo = abs(date('N', strtotime('01 May '. $year)) - 7) + 1;
+
         $pascoa = DateTime::createFromFormat('j/n/Y', "$day/$month/$year");
         $sexta_santa = clone $pascoa;
         $carnaval1  = clone $pascoa;
         $carnaval2  = clone $pascoa;
         $corpusChrist  = clone $pascoa;
+        $dia_maes  = DateTime::createFromFormat('j/n/Y', "$primeiro_domingo/05/$year");
+        $dia_pais  = clone $dia_maes;
 
 
         $sexta_santa->modify('-2 days');
@@ -81,11 +85,16 @@ class Holiday
         $corpusChrist->modify('+29 days');
 
 
+        $dia_maes->modify('+7 days');
+        $dia_pais->modify('+98 days');
+
         $this->holiday[] = new Holiday('Páscoa', $pascoa);
         $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa);
         $this->holiday[] = new Holiday('Carnaval', $carnaval1);
         $this->holiday[] = new Holiday('Carnaval', $carnaval2);
         $this->holiday[] = new Holiday('Corpus Christ', $corpusChrist);
+        $this->holiday[] = new Holiday('Dia das mães', $dia_maes);
+        $this->holiday[] = new Holiday('Dia dos Pais', $dia_pais);
     }
 
     public function isHoliday(DateTime $date)
