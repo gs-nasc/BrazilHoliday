@@ -1,6 +1,6 @@
 <?php
 
-require "../Holiday.php";
+require "../src/Holiday.php";
 
 use BrazilHoliday\Holiday;
 
