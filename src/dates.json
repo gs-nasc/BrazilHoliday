@@ -6,14 +6,79 @@
             "type": "Feriado Nacional"
         },
         {
+            "name": "Dia Internacional das Mulheres",
+            "date": "08/03",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia da mentira",
+            "date": "01/04",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Índio",
+            "date": "19/04",
+            "type": "Dia Convencional"
+        },
+        {
             "name": "Tiradentes",
             "date": "21/04",
             "type": "Feriado Nacional"
         },
         {
-            "name": "Dia do Trabalho",
+            "name": "Descobrimento do Brasil",
+            "date": "22/04",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Trabalhador",
             "date": "01/05",
             "type": "Feriado Nacional"
+        },
+        {
+            "name": "Dia da Abolição da Escravatura",
+            "date": "13/05",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia Mundial do Meio Ambiente",
+            "date": "05/06",
+            "type": "Feriado Internacional / Dia Convencional"
+        },
+        {
+            "name": "Dia dos Namorados",
+            "date": "12/06",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia de São João (Festa Junina)",
+            "date": "24/06",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Amigo",
+            "date": "20/07",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia dos Avós",
+            "date": "26/07",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Estudante",
+            "date": "11/08",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Folclore",
+            "date": "22/08",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia do Soldado",
+            "date": "25/08",
+            "type": "Dia Convencional"
         },
         {
             "name": "Independência do Brasil",
@@ -21,9 +86,29 @@
             "type": "Feriado Nacional"
         },
         {
-            "name": "Nossa Senhora Aparecida",
+            "name": "Dia da Árvore | Dia Internacional da Paz",
+            "date": "21/09",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia das Crianças | Dia de N. Srª. Aparecida",
             "date": "12/10",
             "type": "Feriado Nacional"
+        },
+        {
+            "name": "Dia do Professor",
+            "date": "15/10",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia Nacional do Livro",
+            "date": "29/10",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Halloween",
+            "date": "31/10",
+            "type": "Dia Convencional | Feriado em alguns lugares"
         },
         {
             "name": "Finados",
@@ -36,9 +121,24 @@
             "type": "Feriado Nacional"
         },
         {
+            "name": "Dia da Bandeira",
+            "date": "19/11",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia Nacional da Consciência Negra",
+            "date": "20/11",
+            "type": "Dia Convencional"
+        },
+        {
+            "name": "Dia Internacional dos Direitos Humanos",
+            "date": "10/12",
+            "type": "Dia Convencional"
+        },
+        {
             "name": "Véspera de Natal",
             "date": "24/12",
-            "type": "Dia Comum"
+            "type": "Dia Convencional"
         },
         {
             "name": "Natal",
@@ -48,7 +148,7 @@
         {
             "name": "Véspera de Ano Novo",
             "date": "31/12",
-            "type": "Dia Comum"
+            "type": "Dia Convencional"
         }
     ]
 }
