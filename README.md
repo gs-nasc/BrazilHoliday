@@ -1,6 +1,11 @@
 # Brazil Holiday
 Brazil Holiday é uma biblioteca PHP que diz se um dia é ou não feriado, por enquanto temos só os feriados mais importantes mas estamos em constante atualização e sempre adicionando novos feriados!
 
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=gs-nasc_BrazilHoliday&metric=bugs)](https://sonarcloud.io/dashboard?id=gs-nasc_BrazilHoliday)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=gs-nasc_BrazilHoliday&metric=code_smells)](https://sonarcloud.io/dashboard?id=gs-nasc_BrazilHoliday)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=gs-nasc_BrazilHoliday&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=gs-nasc_BrazilHoliday)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=gs-nasc_BrazilHoliday&metric=security_rating)](https://sonarcloud.io/dashboard?id=gs-nasc_BrazilHoliday)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=gs-nasc_BrazilHoliday&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=gs-nasc_BrazilHoliday)
 <a target='_blank' href="https://www.codefactor.io/repository/github/gs-nasc/brazilholiday">
   <img src="https://www.codefactor.io/Content/badges/APlus.svg"/>
 </a>
