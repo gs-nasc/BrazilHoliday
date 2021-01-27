@@ -1,6 +1,10 @@
 # Brazil Holiday
 Brazil Holiday é uma biblioteca PHP que diz se um dia é ou não feriado, por enquanto temos só os feriados mais importantes mas estamos em constante atualização e sempre adicionando novos feriados!
 
+<a target='_blank' href="https://www.codefactor.io/repository/github/gs-nasc/brazilholiday">
+  <img src="https://www.codefactor.io/Content/badges/APlus.svg"/>
+</a>
+
 # Começando
 
 ### Instalando
