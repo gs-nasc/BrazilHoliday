@@ -20,6 +20,8 @@ A biblioteca pode ser instalada pelo composer (e é o mais recomendado), o coman
 composer require gs-nasc/brazil-holiday
 ```
 
+via [Packagist](https://packagist.org/packages/gs-nasc/brazil-holiday)
+
 ### Implementando
 
 A biblioteca é de fácil implementação e utilização abaixo estão códigos de exemplo:<br>
@@ -34,7 +36,13 @@ use BrazilHoliday\Holiday;
 $holiday = new Holiday();
 
 // Aqui carregamos o ano que vamos usar para encontrarmos o feriado
+// Somente feriados que não são dias úteis (Ex: Natal)
 $holiday->load(2021);
+
+// Todos os feriados ( Ex: Dia da Bandeira )
+$holiday->load(2021, "all");
+
+// troque 2021 pelo ano que irá utilizar
 
 // No lugar de 01/01/2021 coloque a data que você quer 
 //saber se é feriado, siga o padrão que está ali!
@@ -51,7 +59,7 @@ echo $foo;
 
 // Método if curto
 
-echo $holiday->isHoliday($date) ? "É feriado" : "Não é feriado";
+echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
 
 ```
 
@@ -64,7 +72,14 @@ use BrazilHoliday\Holiday;
 $holiday = new Holiday();
 
 // Aqui carregamos o ano que vamos usar para encontrarmos o feriado
+// Somente feriados que não são dias úteis (Ex: Natal)
 $holiday->load(2021);
+
+// Todos os feriados ( Ex: Dia da Bandeira )
+$holiday->load(2021, "all");
+
+// troque 2021 pelo ano que irá utilizar
+
 
 // Verificamos se hoje é ou não feriado
 if($holiday->todayHoliday()){
@@ -77,7 +92,7 @@ echo $foo;
 
 // Método if curto
 
-echo $holiday->todayHoliday() ? "É feriado" : "Não é feriado";
+echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
 
 ```
 
@@ -90,7 +105,14 @@ use BrazilHoliday\Holiday;
 $holiday = new Holiday();
 
 // Aqui carregamos o ano que vamos usar para encontrarmos o feriado
+// Somente feriados que não são dias úteis (Ex: Natal)
 $holiday->load(2021);
+
+// Todos os feriados ( Ex: Dia da Bandeira )
+$holiday->load(2021, "all");
+
+// troque 2021 pelo ano que irá utilizar
+
 
 // Verificamos se amanhã vai ser ou não feriado
 if($holiday->tomorrowHoliday()){
@@ -103,7 +125,7 @@ echo $foo;
 
 // Método if curto
 
-echo $holiday->tomorrowHoliday() ? "É feriado" : "Não é feriado";
+echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
 
 ```
 
@@ -116,7 +138,14 @@ use BrazilHoliday\Holiday;
 $holiday = new Holiday();
 
 // Aqui carregamos o ano que vamos usar para encontrarmos o feriado
+// Somente feriados que não são dias úteis (Ex: Natal)
 $holiday->load(2021);
+
+// Todos os feriados ( Ex: Dia da Bandeira )
+$holiday->load(2021, "all");
+
+// troque 2021 pelo ano que irá utilizar
+
 
 // Verificamos se ontem foi ou não feriado
 if($holiday->yesterdayHoliday()){
@@ -129,9 +158,34 @@ echo $foo;
 
 // Método if curto
 
-echo $holiday->yesterdayHoliday() ? "É feriado" : "Não é feriado";
+echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
 
 ```
+
+Quando é feriado a biblioteca retorna um objeto com os seguintes atributos:
+- title (Título do feriado. Ex: Ano Novo)
+- date (Data do feriado. Ex: 01/01/2021)
+- type (Tipo do feriado. Ex: Feriado Nacional)
+
+Quando não é feriado a biblioteca retorna ```false```
+
+# Como ajudar?
+
+Se você está sentindo falta de algum feriado ou quer arrumar algum bug que encontrou siga os passos abaixo:
+
+## Adicionar novo feriado
+
+### Feriado Fixo
+
+Para adicionar um novo feriado fixo (Ex: Natal) é só fazer um fork deste respositório e editar o arquivo [dates.json](https://github.com/gs-nasc/BrazilHoliday/blob/main/src/dates.json) que se econtra na pasta ```src/``` seguindo seus padrões, quando terminar é só fazer um Pull Request que eu analizarei o pedido e caso se enquadre na Biblioteca adicionarei no projeto.
+
+### Feriado Móvel
+
+Para adicionar um novo feriado móvel basta abrir uma Issue dizendo qual o feriado que eu buscarei um método de adiciona-lo no projeto
+
+## Arrumar Bug
+
+Caso queira arrumar algum bug é só fazer fork do projeto, arrumar o bug e fazer testes para ver se tudo continua funcionando, caso tudo funcione fazer um Pull Request para ser implementado.
 
 ## Tabela de Feriados Disponíveis
 |                                        	| Status 	|
