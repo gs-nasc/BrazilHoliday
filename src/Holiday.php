@@ -21,11 +21,13 @@ class Holiday
     public function load($year = 2000, $type = "default")
     {
 
+        $fnacional = "Feriado Nacional";
+
         $holidays = json_decode(file_get_contents(dirname(__FILE__) . "/dates.json"), true);
 
         foreach ($holidays['fixed_holidays'] as $holiday) {
             if ($type == "default" || $type == "national") {
-                if ($holiday['type'] == "Feriado Nacional") {
+                if ($holiday['type'] == $fnacional) {
                     $this->holiday[] = new Holiday($holiday['name'], DateTime::createFromFormat('d/m/Y', $holiday['date'] . '/' . $year), $holiday['type']);
                 }
             } else {
@@ -92,13 +94,13 @@ class Holiday
         $dia_maes->modify('+7 days');
         $dia_pais->modify('+98 days');
 
-        $this->holiday[] = new Holiday('Páscoa', $pascoa, "Feriado Nacional");
-        $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa, "Feriado Nacional");
-        $this->holiday[] = new Holiday('Carnaval', $carnaval1, "Feriado Nacional");
-        $this->holiday[] = new Holiday('Carnaval', $carnaval2, "Feriado Nacional");
-        $this->holiday[] = new Holiday('Corpus Christ', $corpusChrist, "Feriado Nacional");
-        $this->holiday[] = new Holiday('Dia das mães', $dia_maes, "Dia Convencional");
-        $this->holiday[] = new Holiday('Dia dos Pais', $dia_pais, "Dia Convencional");
+        $this->holiday[] = new Holiday('Páscoa', $pascoa, $fnacional);
+        $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa, $fnacional);
+        $this->holiday[] = new Holiday('Carnaval', $carnaval1, $fnacional);
+        $this->holiday[] = new Holiday('Carnaval', $carnaval2, $fnacional);
+        $this->holiday[] = new Holiday('Corpus Christ', $corpusChrist, $fnacional);
+        $this->holiday[] = new Holiday('Dia das mães', $dia_maes, $fnacional);
+        $this->holiday[] = new Holiday('Dia dos Pais', $dia_pais, $fnacional);
     }
 
     public function isHoliday(DateTime $dateToCheck)
