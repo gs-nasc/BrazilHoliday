@@ -49,17 +49,20 @@ $holiday->load(2021, "all");
 $date = DateTime::createFromFormat('d/m/Y', '01/01/2021');
 
 // Finalmente verificamos se é ou não feriado
-if($holiday->isHoliday($date)){
-  $foo = "É feriado";
+$feriado = $holiday->isHoliday($date);
+
+echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
+
+// OU
+
+if($feriado) {
+    $foo = "Feriado " . $feriado->title;
 }else{
-  $foo = "Não é feriado";
+    $foo = "Não é feriado";
 }
 
+
 echo $foo;
-
-// Método if curto
-
-echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
 
 ```
 
@@ -80,20 +83,21 @@ $holiday->load(2021, "all");
 
 // troque 2021 pelo ano que irá utilizar
 
+// Finalmente verificamos se é ou não feriado
+$feriado = $holiday->todayHoliday($date);
 
-// Verificamos se hoje é ou não feriado
-if($holiday->todayHoliday()){
-  $foo = "É feriado";
+echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
+
+// OU
+
+if($feriado) {
+    $foo = "Feriado " . $feriado->title;
 }else{
-  $foo = "Não é feriado";
+    $foo = "Não é feriado";
 }
 
+
 echo $foo;
-
-// Método if curto
-
-echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
-
 ```
 
 #### Amanhã
@@ -113,20 +117,21 @@ $holiday->load(2021, "all");
 
 // troque 2021 pelo ano que irá utilizar
 
+// Finalmente verificamos se é ou não feriado
+$feriado = $holiday->tomorrowHoliday($date);
 
-// Verificamos se amanhã vai ser ou não feriado
-if($holiday->tomorrowHoliday()){
-  $foo = "É feriado";
+echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
+
+// OU
+
+if($feriado) {
+    $foo = "Feriado " . $feriado->title;
 }else{
-  $foo = "Não é feriado";
+    $foo = "Não é feriado";
 }
 
+
 echo $foo;
-
-// Método if curto
-
-echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
-
 ```
 
 #### Ontem
@@ -146,20 +151,21 @@ $holiday->load(2021, "all");
 
 // troque 2021 pelo ano que irá utilizar
 
+// Finalmente verificamos se é ou não feriado
+$feriado = $holiday->yesterdayHoliday($date);
 
-// Verificamos se ontem foi ou não feriado
-if($holiday->yesterdayHoliday()){
-  $foo = "É feriado";
+echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
+
+// OU
+
+if($feriado) {
+    $foo = "Feriado " . $feriado->title;
 }else{
-  $foo = "Não é feriado";
+    $foo = "Não é feriado";
 }
 
+
 echo $foo;
-
-// Método if curto
-
-echo $feriado = $holiday->yesterdayHoliday() ? "Feriado: " . $feriado->title : "Não é feriado";
-
 ```
 
 Quando é feriado a biblioteca retorna um objeto com os seguintes atributos:
