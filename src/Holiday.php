@@ -11,19 +11,26 @@ class Holiday
     public $holiday;
     public $type;
 
-    public function __construct($title = NULL, $date = NULL)
+    public function __construct($title = NULL, $date = NULL, $type = NULL)
     {
         $this->title = $title;
         $this->date = $date;
+        $this->type = $type;
     }
 
-    public function load($year = 2000)
+    public function load($year = 2000, $type = "default")
     {
 
         $holidays = json_decode(file_get_contents(dirname(__FILE__) . "/dates.json"), true);
 
         foreach ($holidays['fixed_holidays'] as $holiday) {
-            $this->holiday[] = new Holiday($holiday['name'], DateTime::createFromFormat('d/m/Y', $holiday['date'] . '/' . $year));
+            if ($type == "default" || $type == "national") {
+                if ($holiday['type'] == "Feriado Nacional") {
+                    $this->holiday[] = new Holiday($holiday['name'], DateTime::createFromFormat('d/m/Y', $holiday['date'] . '/' . $year), $holiday['type']);
+                }
+            } else {
+                $this->holiday[] = new Holiday($holiday['name'], DateTime::createFromFormat('d/m/Y', $holiday['date'] . '/' . $year), $holiday['type']);
+            }
         }
 
         // FERIADOS MÓVEIS
@@ -39,10 +46,7 @@ class Holiday
         $day = 0;
         $month = 0;
 
-        if ($year >= 1900 & $year <= 2099) {
-            $x = 24;
-            $y = 5;
-        } else if ($year >= 2100 & $year <= 2199) {
+        if ($year >= 2100 & $year <= 2199) {
             $x = 24;
             $y = 6;
         } else if ($year >= 2200 & $year <= 2299) {
@@ -68,7 +72,7 @@ class Holiday
         }
 
 
-        $primeiro_domingo = abs(date('N', strtotime('01 May '. $year)) - 7) + 1;
+        $primeiro_domingo = abs(date('N', strtotime('01 May ' . $year)) - 7) + 1;
 
         $pascoa = DateTime::createFromFormat('j/n/Y', "$day/$month/$year");
         $sexta_santa = clone $pascoa;
@@ -88,19 +92,19 @@ class Holiday
         $dia_maes->modify('+7 days');
         $dia_pais->modify('+98 days');
 
-        $this->holiday[] = new Holiday('Páscoa', $pascoa);
-        $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa);
-        $this->holiday[] = new Holiday('Carnaval', $carnaval1);
-        $this->holiday[] = new Holiday('Carnaval', $carnaval2);
-        $this->holiday[] = new Holiday('Corpus Christ', $corpusChrist);
-        $this->holiday[] = new Holiday('Dia das mães', $dia_maes);
-        $this->holiday[] = new Holiday('Dia dos Pais', $dia_pais);
+        $this->holiday[] = new Holiday('Páscoa', $pascoa, "Feriado Nacional");
+        $this->holiday[] = new Holiday('Sexta-feira Santa', $sexta_santa, "Feriado Nacional");
+        $this->holiday[] = new Holiday('Carnaval', $carnaval1, "Feriado Nacional");
+        $this->holiday[] = new Holiday('Carnaval', $carnaval2, "Feriado Nacional");
+        $this->holiday[] = new Holiday('Corpus Christ', $corpusChrist, "Feriado Nacional");
+        $this->holiday[] = new Holiday('Dia das mães', $dia_maes, "Dia Convencional");
+        $this->holiday[] = new Holiday('Dia dos Pais', $dia_pais, "Dia Convencional");
     }
 
-    public function isHoliday(DateTime $date)
+    public function isHoliday(DateTime $dateToCheck)
     {
         foreach ($this->holiday as $holiday) {
-            if ($holiday->date == $date) {
+            if ($holiday->date == $dateToCheck) {
                 return true;
             }
         }
@@ -109,10 +113,10 @@ class Holiday
 
     public function todayHoliday()
     {
-        $date = new DateTime("now");
+        $dateToCheck = new DateTime("now");
         foreach ($this->holiday as $holiday) {
-            if ($holiday->date == $date) {
-                return true;
+            if ($holiday->date == $dateToCheck) {
+                return $holiday;
             }
         }
         return false;
@@ -120,20 +124,20 @@ class Holiday
 
     public function tomorrowHoliday()
     {
-        $date = new DateTime("tomorrow");
+        $dateToCheck = new DateTime("tomorrow");
         foreach ($this->holiday as $holiday) {
-            if ($holiday->date == $date) {
-                return true;
+            if ($holiday->date == $dateToCheck) {
+                return $holiday;
             }
         }
         return false;
     }
     public function yesterdayHoliday()
     {
-        $date = new DateTime("yesterday");
+        $dateToCheck = new DateTime("yesterday");
         foreach ($this->holiday as $holiday) {
-            if ($holiday->date == $date) {
-                return true;
+            if ($holiday->date == $dateToCheck) {
+                return $holiday;
             }
         }
         return false;
