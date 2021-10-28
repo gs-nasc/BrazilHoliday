@@ -234,4 +234,5 @@ Caso queira arrumar algum bug é só fazer fork do projeto, arrumar o bug e faze
 | Corpus Christ                          	| ✔️      	|
 | Dia da Mães                            	| ✔️      	|
 | Dia dos Pais                           	| ✔️      	|
+| Dia do Servidor Público                 | ✔️        |
 
