@@ -101,6 +101,11 @@
             "type": "Dia Convencional"
         },
         {
+            "name": "Dia do Servidor Público",
+            "date": "28/10",
+            "type": "Dia Convencional"
+        },
+        {
             "name": "Dia Nacional do Livro",
             "date": "29/10",
             "type": "Dia Convencional"
