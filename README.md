@@ -84,7 +84,7 @@ $holiday->load(2021, "all");
 // troque 2021 pelo ano que irá utilizar
 
 // Finalmente verificamos se é ou não feriado
-$feriado = $holiday->todayHoliday($date);
+$feriado = $holiday->todayHoliday();
 
 echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
 
@@ -118,7 +118,7 @@ $holiday->load(2021, "all");
 // troque 2021 pelo ano que irá utilizar
 
 // Finalmente verificamos se é ou não feriado
-$feriado = $holiday->tomorrowHoliday($date);
+$feriado = $holiday->tomorrowHoliday();
 
 echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
 
@@ -152,7 +152,7 @@ $holiday->load(2021, "all");
 // troque 2021 pelo ano que irá utilizar
 
 // Finalmente verificamos se é ou não feriado
-$feriado = $holiday->yesterdayHoliday($date);
+$feriado = $holiday->yesterdayHoliday();
 
 echo  ($feriado) ? "Feriado " . $feriado->title : "Não é feriado";
 
